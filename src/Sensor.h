@@ -1,9 +1,10 @@
 #ifndef __SENSOR_H
 #define __SENSOR_H
 
+#include <vector>
 #include "SensorManager.h"
 
-class Sensor {
+class Sensor{
 
     // ctors & dtors
     public:
@@ -14,9 +15,9 @@ class Sensor {
     private:
     double          m_value;
 
-    // observer
+    // observers
     private:
-    SensorManager   m_manager;
+    std::vector<SensorManager>   m_manager;
 
     public:
     void            attach(SensorManager);
