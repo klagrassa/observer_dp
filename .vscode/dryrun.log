@@ -1,5 +1,0 @@
-make main --dry-run --keep-going --print-directory
-make: Entering directory `/Users/klagrassa/Library/CloudStorage/OneDrive-Personnel/Documents/IMT Atlantique/FIP3A/UE_D/design_pattern'
-g++ -Wall -std=c++17    src/main.cpp   -o main
-make: Leaving directory `/Users/klagrassa/Library/CloudStorage/OneDrive-Personnel/Documents/IMT Atlantique/FIP3A/UE_D/design_pattern'
- 
