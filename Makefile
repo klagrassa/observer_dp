@@ -25,13 +25,13 @@ all: checkdirs $(EXE_DIR)/app
 $(EXE_DIR)/app: $(OBJ)
 	$(LD) $^ -o $@
 
-checkdirs: $(BUILD_DIR)
+checkdirs: $(BUILD_DIR) $(EXE_DIR)
 
 $(BUILD_DIR):
 	@mkdir -p $@
 
 clean:
-	@rm -rf $(BUILD_DIR)
+	@rm -rf $(BUILD_DIR) $(EXE_DIR)
 
 
 $(foreach bdir,$(BUILD_DIR),$(eval $(call make-goal,$(bdir))))

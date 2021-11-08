@@ -6,6 +6,11 @@ SensorManager::SensorManager(Sensor sensor)
     this->m_sensor = sensor;
 }
 
+SensorManager::~SensorManager()
+{
+
+}
+
 
 void SensorManager::update()
 {

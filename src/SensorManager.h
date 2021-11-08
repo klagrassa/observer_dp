@@ -6,14 +6,14 @@
 class SensorManager {
 
     private:
-    Sensor m_sensor;
+    Sensor* m_sensor;
 
     public:
     void update();
 
     // ctor and dtor
     public:
-    SensorManager(Sensor sensor);
+    SensorManager(Sensor* sensor);
     ~SensorManager();
 
     // operators
