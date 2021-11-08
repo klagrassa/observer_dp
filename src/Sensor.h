@@ -2,7 +2,8 @@
 #define __SENSOR_H
 
 #include <vector>
-#include "SensorManager.h"
+
+class SensorManager;
 
 class Sensor{
 

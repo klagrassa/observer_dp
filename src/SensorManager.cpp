@@ -3,7 +3,7 @@
 // ctor and dtor
 SensorManager::SensorManager(Sensor sensor)
 {
-    this->sensor = sensor;
+    this->m_sensor = sensor;
 }
 
 

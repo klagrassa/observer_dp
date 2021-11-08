@@ -1,5 +1,5 @@
 #include "Sensor.h"
-
+#include "SensorManager.h"
 
 //ctor and dtor
 
