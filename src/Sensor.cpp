@@ -21,12 +21,12 @@ Sensor::~Sensor()
    
 }
 
-void Sensor::attach(SensorManager observer)
+void Sensor::attach(SensorManager* observer)
 {
    this->m_manager.push_back(observer); 
 }
 
-void Sensor::detach(SensorManager observer)
+void Sensor::detach(SensorManager* observer)
 {
     for (unsigned int i = 0; i < this->m_manager.size(); i++)
     {

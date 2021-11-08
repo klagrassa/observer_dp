@@ -18,11 +18,11 @@ class Sensor{
 
     // observers
     private:
-    std::vector<SensorManager>   m_manager;
+    std::vector<SensorManager*>   m_manager;
 
     public:
-    void            attach(SensorManager);
-    void            detach(SensorManager);
+    void            attach(SensorManager*);
+    void            detach(SensorManager*);
     void            notify();
 
 

@@ -30,6 +30,9 @@ checkdirs: $(BUILD_DIR) $(EXE_DIR)
 $(BUILD_DIR):
 	@mkdir -p $@
 
+$(EXE_DIR):
+	@mkdir -p $@
+
 clean:
 	@rm -rf $(BUILD_DIR) $(EXE_DIR)
 
