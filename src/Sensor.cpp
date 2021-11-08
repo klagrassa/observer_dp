@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Sensor.h"
 #include "SensorManager.h"
 
@@ -9,7 +11,6 @@
  */
 Sensor::Sensor()
 {
-
 }
 
 /**
@@ -21,12 +22,16 @@ Sensor::~Sensor()
    
 }
 
-void Sensor::attach(SensorManager* observer)
+void Sensor::attach(Observer* observer)
 {
    this->m_manager.push_back(observer); 
+   for (unsigned int it = 0; it < this->m_manager.size(); it++)
+   {
+       std::cout << &(this->m_manager[it]) << std::endl;
+   }
 }
 
-void Sensor::detach(SensorManager* observer)
+void Sensor::detach(Observer* observer)
 {
     for (unsigned int i = 0; i < this->m_manager.size(); i++)
     {
@@ -35,9 +40,14 @@ void Sensor::detach(SensorManager* observer)
     }
 }
 
+/**
+ * @brief Notify all the observer attached that the sensor has changed 
+ * it's value 
+ * 
+ */
 void Sensor::notify()
 {
-
+    // loop through the observers to update them
 }
 
 // operators

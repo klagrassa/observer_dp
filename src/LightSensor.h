@@ -3,7 +3,11 @@
 
 #include "Sensor.h"
 
-class LightSensor : Sensor {
+class LightSensor final : Sensor {
+
+    // useful data
+    private:
+    double m_value;
     
 };
 

@@ -5,5 +5,7 @@
 int main()
 {
 
+    Sensor first;
+
     return 0;
 }

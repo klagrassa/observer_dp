@@ -3,8 +3,11 @@
 
 #include "Sensor.h"
 
-class TemperatureSensor : Sensor {
+class TemperatureSensor final : Sensor {
 
+    // useful data
+    private:
+    double m_value; /* temperature in celsius */
 };
 
 #endif // __TEMPERATURESENSOR_H

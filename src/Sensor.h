@@ -2,28 +2,26 @@
 #define __SENSOR_H
 
 #include <vector>
+#include "Subject.h"
 
+// forward declaration to avoid circular dependencies problems
 class SensorManager;
 
-class Sensor{
+class Sensor : public Subject {
 
     // ctors & dtors
     public:
     Sensor();
     ~Sensor();
 
-    // useful data
-    private:
-    double          m_value;
-
     // observers
     private:
-    std::vector<SensorManager*>   m_manager;
+    std::vector<Observer*>   m_manager;
 
     public:
-    void            attach(SensorManager*);
-    void            detach(SensorManager*);
-    void            notify();
+    void attach(Observer*) override;
+    void detach(Observer*) override;
+    void notify() override;
 
 
 };

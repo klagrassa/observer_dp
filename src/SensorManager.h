@@ -1,15 +1,16 @@
 #ifndef __SENSOR_MANAGER_H
 #define __SENSOR_MANAGER_H
 
+#include "Observer.h"
 #include "Sensor.h"
 
-class SensorManager {
+class SensorManager : public Observer {
 
     private:
     Sensor* m_sensor;
 
-    public:
-    void update();
+    protected:
+    void update() override;
 
     // ctor and dtor
     public:
