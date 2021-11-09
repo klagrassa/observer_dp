@@ -50,6 +50,7 @@ void Sensor::notify()
    }
 }
 
+
 // operators
 
 
@@ -58,4 +59,40 @@ void Sensor::displayObservers(){
    {
        std::cout << std::to_string(m_managers[i].getId()) << std::endl;
    }
+// get / set
+/**
+ * @brief Set the unit of the Sensor 
+ * 
+ * @param unit string corresponding to the unit the sensor measures 
+ */
+void Sensor::setUnit(std::string unit) {
+    this->m_unit = unit;
+}
+
+/**
+ * @brief Return the unit measured by the Sensor 
+ * 
+ * @return std::string string corresponding to the unit the sensor measures
+ */
+std::string Sensor::getUnit() {
+    return this->m_unit;
+}
+
+/**
+ * @brief Set the value of the sensor 
+ * 
+ * @param value actual value of the sensor 
+ */
+void Sensor::setValue(double value) {
+    this->m_value = value;
+}
+
+/**
+ * @brief Return the value measured by the Sensor 
+ * 
+ * @return double measure of the Sensor
+ */
+double Sensor::getValue() {
+    return this->m_value;
+
 }

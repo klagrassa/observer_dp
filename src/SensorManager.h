@@ -1,20 +1,29 @@
 #ifndef __SENSOR_MANAGER_H
 #define __SENSOR_MANAGER_H
 
+
 #include "Observer.h"
 #include "Sensor.h"
 
-class SensorManager : public Observer {
+class SensorManager final : public Observer {
 
     private:
     Sensor* m_sensor;
+    int id;
+
+
+    public:
+    void update() override;
+
 
     // ctor and dtor
     public:
-    SensorManager(Sensor* sensor);
+    SensorManager(Sensor* sensor, int id);
     ~SensorManager();
 
-    void update() override;
+    // get / set
+    void setId(int id);
+    int getId() const;
 
     // operators
     public:
