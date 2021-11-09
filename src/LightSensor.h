@@ -7,7 +7,6 @@ class LightSensor final : Sensor {
 
     // useful data
     private:
-    double m_value;
     
 };
 
