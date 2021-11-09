@@ -11,14 +11,15 @@ class SensorManager final : public Observer {
     Sensor* m_sensor;
     int id;
 
+
     public:
     void update() override;
+
 
     // ctor and dtor
     public:
     SensorManager(Sensor* sensor, int id);
     ~SensorManager();
-
 
     // get / set
     void setId(int id);

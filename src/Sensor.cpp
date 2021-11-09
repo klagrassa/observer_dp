@@ -24,19 +24,16 @@ Sensor::~Sensor()
 
 void Sensor::attach(Observer* observer)
 {
-   this->m_manager.push_back(observer); 
-   for (unsigned int it = 0; it < this->m_manager.size(); it++)
-   {
-       std::cout << &(this->m_manager[it]) << std::endl;
-   }
+   this->m_managers.push_back(observer);
 }
 
 void Sensor::detach(Observer* observer)
 {
-    for (unsigned int i = 0; i < this->m_manager.size(); i++)
+    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
     {
-        if (observer == this->m_manager.at(i))
-        ;
+        if(observer == m_managers[i]){
+            m_managers.erase(i);
+        }
     }
 }
 
@@ -47,9 +44,21 @@ void Sensor::detach(Observer* observer)
  */
 void Sensor::notify()
 {
-    // loop through the observers to update them
+    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
+   {
+       m_managers[i].update();
+   }
 }
 
+
+// operators
+
+
+void Sensor::displayObservers(){
+    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
+   {
+       std::cout << std::to_string(m_managers[i].getId()) << std::endl;
+   }
 // get / set
 /**
  * @brief Set the unit of the Sensor 
@@ -85,4 +94,5 @@ void Sensor::setValue(double value) {
  */
 double Sensor::getValue() {
     return this->m_value;
+
 }

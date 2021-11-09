@@ -13,8 +13,10 @@ class Sensor : public Subject {
     ~Sensor();
 
     // observers
+
     protected:
-    std::vector<Observer*>   m_manager;
+    std::vector<Observer*>   m_managers;
+
 
     public:
     void attach(Observer*) override;
@@ -31,6 +33,7 @@ class Sensor : public Subject {
     std::string getUnit();
     double getValue();
 
+    void displayObservers();
 };
 
 #endif
