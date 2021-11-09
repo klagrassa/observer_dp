@@ -18,16 +18,17 @@ class SensorManager final : public Observer {
 
     // ctor and dtor
     public:
+    SensorManager(int id);
     SensorManager(Sensor* sensor, int id);
     ~SensorManager();
 
     // get / set
     void setId(int id);
-    int getId() const;
+    int getId() override;
 
     // operators
     public:
-    friend bool operator==(const SensorManager&, const SensorManager&);
+    //friend bool operator==(const SensorManager&, const SensorManager&);
 
 
 };
