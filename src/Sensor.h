@@ -16,7 +16,7 @@ class Sensor : public Subject {
 
     // observers
     private:
-    std::vector<Observer*>   m_manager;
+    std::vector<Observer*>   m_managers;
 
     public:
     void attach(Observer*) override;
@@ -24,6 +24,7 @@ class Sensor : public Subject {
     void notify() override;
 
 
+    void displayObservers();
 };
 
 #endif

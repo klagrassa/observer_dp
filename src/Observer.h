@@ -8,7 +8,7 @@
  */
 class Observer {
 
-    protected:
+    public:
     virtual void update() = 0;
 };
 

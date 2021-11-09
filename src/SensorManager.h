@@ -9,13 +9,12 @@ class SensorManager : public Observer {
     private:
     Sensor* m_sensor;
 
-    protected:
-    void update() override;
-
     // ctor and dtor
     public:
     SensorManager(Sensor* sensor);
     ~SensorManager();
+
+    void update() override;
 
     // operators
     public:
