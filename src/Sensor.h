@@ -11,7 +11,7 @@ class Sensor : public Subject {
     // ctors & dtors
     public:
     Sensor();
-    Sensor(std::string unit, double value);
+    Sensor(const char* unit, double value);
     ~Sensor();
 
     // observers
@@ -26,13 +26,13 @@ class Sensor : public Subject {
 
     protected:
     double m_value;
-    std::string m_unit;
+    const char* m_unit;
 
     // get / set
     public:
-    void setUnit(std::string unit);
+    void setUnit(const char* unit);
     void setValue(double value);
-    std::string getUnit();
+    const char* getUnit();
     double getValue();
 
     public:

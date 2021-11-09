@@ -3,7 +3,7 @@
 
 #include "Sensor.h"
 
-class LightSensor final : Sensor {
+class LightSensor final : public Sensor {
 
     public:
     LightSensor();

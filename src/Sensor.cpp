@@ -21,7 +21,7 @@ Sensor::Sensor()
  * @param unit unit of the sensor
  * @param value actual value of the sensor
  */
-Sensor::Sensor(std::string unit, double value)
+Sensor::Sensor(const char* unit, double value)
 {
    this->setUnit(unit);
    this->setValue(value); 
@@ -32,9 +32,7 @@ Sensor::Sensor(std::string unit, double value)
  * Default destructor
  */
 Sensor::~Sensor()
-{
-   
-}
+{}
 
 /**
  * @brief Attach an Observer to the Sensor 
@@ -94,16 +92,16 @@ void Sensor::displayObservers(){
  * 
  * @param unit string corresponding to the unit the sensor measures 
  */
-void Sensor::setUnit(std::string unit) {
+void Sensor::setUnit(const char* unit) {
     this->m_unit = unit;
 }
 
 /**
  * @brief Return the unit measured by the Sensor 
  * 
- * @return std::string string corresponding to the unit the sensor measures
+ * @return const char* string corresponding to the unit the sensor measures
  */
-std::string Sensor::getUnit() {
+const char* Sensor::getUnit() {
     return this->m_unit;
 }
 
