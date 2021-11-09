@@ -5,9 +5,10 @@
 
 class LightSensor final : Sensor {
 
-    // useful data
-    private:
-    
+    public:
+    LightSensor();
+    LightSensor(double value);
+    ~LightSensor();
 };
 
 #endif // __LIGHTSENSOR_H

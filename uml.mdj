@@ -1027,9 +1027,9 @@
 										"$ref": "AAAAAAF8y3UzMbS2K54="
 									},
 									"font": "Arial;13;0",
-									"left": 424,
+									"left": 419,
 									"top": 376,
-									"width": 48.78173828125,
+									"width": 58.169921875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1037,7 +1037,7 @@
 										"$ref": "AAAAAAF8y3UzMbS6sew="
 									},
 									"edgePosition": 1,
-									"text": "+notifies"
+									"text": "+Notifies"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -3014,7 +3014,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8y23fILNmYHA="
 							},
-							"name": "notifies",
+							"name": "Notifies",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAF8y3UzMbS3GsY=",

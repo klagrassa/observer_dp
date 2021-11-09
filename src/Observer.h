@@ -10,6 +10,7 @@ class Observer {
 
     public:
     virtual void update() = 0;
+    virtual int getObserverId() = 0;
 };
 
 #endif // __OBSERVER_H

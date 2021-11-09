@@ -24,7 +24,9 @@ class SensorManager final : public Observer {
 
     // get / set
     void setId(int id);
-    int getId() override;
+    int getObserverId() override;
+    void setSensor(Sensor*);
+    Sensor* getSensor();
 
     // operators
     public:

@@ -2,7 +2,18 @@
 
 #include "SensorManager.h"
 
-// ctor and dtor
+// ctors and dtor
+/**
+ * @brief Construct a new Sensor Manager:: Sensor Manager object
+ * 
+ * @param id id of the SensorManager
+ */
+SensorManager::SensorManager(int id) {
+    this->setId(id);
+    this->m_sensor = nullptr;
+}
+
+
 /**
  * @brief Construct a new Sensor Manager:: Sensor Manager object
  * 
@@ -19,11 +30,20 @@ SensorManager::~SensorManager()
 
 }
 
-
+/**
+ * @brief Update function. Prints the new values of the sensor 
+ * 
+ */
 void SensorManager::update()
 {
-    std::cout << "Value has changed, it is now " << this->m_sensor->getValue() 
-    << this->m_sensor->getUnit();
+    std::cout 
+    << "Manager " << this->getObserverId() 
+    <<  ", value has changed, it is now " 
+    << this->m_sensor->getValue() 
+    << " " 
+    << this->m_sensor->getUnit()
+    << std::endl
+    << "Data sent to the command system" << std::endl;
 }
 
 // get / set
@@ -37,24 +57,14 @@ void SensorManager::setId(int id) {
  * 
  * @return int the id of the SensorManager 
  */
-int SensorManager::getId() const {
+int SensorManager::getObserverId() {
     return this->id;
 }
 
+void SensorManager::setSensor(Sensor* sensor) {
+    this->m_sensor = sensor;
+}
 
-// operators
-/**
- * @brief Equality operator for the SensorManager class, comparison based
- * on the ids of the two SensorManager 
- * 
- * @param op1 operand one 
- * @param op2 operand two
- * @return true if the adresses of the two operands are the same
- * @return false otherwise
- */
-bool operator==(const SensorManager& op1, const SensorManager& op2) {
-    printf("comparison is called");
-    if (op1.getId() == op2.getId())
-        return true;
-    else return false;
+Sensor* SensorManager::getSensor() {
+    return this->m_sensor;
 }

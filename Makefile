@@ -1,6 +1,6 @@
 CXX=g++
 LD=g++
-CXXFLAGS=-Wall -std=c++17
+CXXFLAGS=-Wall -std=c++17 -g
 
 PRJ_DIR = $(realpath $(CURDIR)/..)
 EXE_DIR = bin

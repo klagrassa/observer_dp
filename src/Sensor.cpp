@@ -11,6 +11,20 @@
  */
 Sensor::Sensor()
 {
+    this->m_unit = "";
+    this->m_value = -1;
+}
+
+/**
+ * @brief Construct a new Sensor:: Sensor object
+ * 
+ * @param unit unit of the sensor
+ * @param value actual value of the sensor
+ */
+Sensor::Sensor(std::string unit, double value)
+{
+   this->setUnit(unit);
+   this->setValue(value); 
 }
 
 /**
@@ -22,19 +36,28 @@ Sensor::~Sensor()
    
 }
 
+/**
+ * @brief Attach an Observer to the Sensor 
+ * 
+ * @param observer observer to attach 
+ */
 void Sensor::attach(Observer* observer)
 {
-   this->m_managers.push_back(observer);
+    this->m_managers.push_back(observer);
+    // get around the implementation limitations
+    dynamic_cast<SensorManager*>(observer)->setSensor(this);
 }
 
 void Sensor::detach(Observer* observer)
 {
-    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
+    for (std::vector<Observer*>::iterator it = m_managers.begin(); it != m_managers.end(); ++it)
     {
-        if(observer == m_managers[i]){
-            m_managers.erase(i);
+        if(observer == *it){
+            m_managers.erase(it);
         }
     }
+    std::cout << "Manager " << observer->getObserverId() << " has been detached" 
+    << std::endl;
 }
 
 /**
@@ -44,21 +67,27 @@ void Sensor::detach(Observer* observer)
  */
 void Sensor::notify()
 {
-    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
-   {
-       m_managers[i].update();
-   }
+    for (std::vector<Observer*>::iterator it = m_managers.begin(); it != m_managers.end(); ++it)
+    {
+        (*it)->update();
+    }
 }
 
 
 // operators
-
-
+/**
+ * @brief Display the observers from the vector list 
+ * 
+ */
 void Sensor::displayObservers(){
-    for (vector<int>::iterator i = m_managers.begin(); i != m_managers.end(); ++i)
-   {
-       std::cout << std::to_string(m_managers[i].getId()) << std::endl;
-   }
+    std::cout 
+    << "SensorManager id : ";
+    for (std::vector<Observer*>::iterator it = m_managers.begin(); it != m_managers.end(); ++it)
+    {
+        std::cout << (*it)->getObserverId() << " ";
+    }
+    std::cout << std::endl;
+}
 // get / set
 /**
  * @brief Set the unit of the Sensor 
@@ -85,6 +114,7 @@ std::string Sensor::getUnit() {
  */
 void Sensor::setValue(double value) {
     this->m_value = value;
+    this->notify();
 }
 
 /**
@@ -94,5 +124,4 @@ void Sensor::setValue(double value) {
  */
 double Sensor::getValue() {
     return this->m_value;
-
 }
