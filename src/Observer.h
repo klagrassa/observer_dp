@@ -8,6 +8,9 @@
  */
 class Observer {
 
+    protected:
+    int id;
+
     public:
     virtual void update() = 0;
     virtual int getObserverId() = 0;

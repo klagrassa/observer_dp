@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unistd.h>
+#include <unistd.h> // sleep
 #include "TemperatureSensor.h"
 #include "LightSensor.h"
 #include "SensorManager.h"

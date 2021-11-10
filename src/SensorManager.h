@@ -9,12 +9,9 @@ class SensorManager final : public Observer {
 
     private:
     Sensor* m_sensor;
-    int id;
-
 
     public:
     void update() override;
-
 
     // ctor and dtor
     public:
@@ -27,11 +24,6 @@ class SensorManager final : public Observer {
     int getObserverId() override;
     void setSensor(Sensor*);
     Sensor* getSensor();
-
-    // operators
-    public:
-    //friend bool operator==(const SensorManager&, const SensorManager&);
-
 
 };
 
